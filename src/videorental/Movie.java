@@ -1,6 +1,6 @@
 package videorental;
 
-public class Movie {
+public abstract class Movie {
 	public static final int CHILDRENS = 2;
 	public static final int REGULAR = 0;
 	public static final int NEW_RELEASE = 1;
@@ -21,11 +21,14 @@ public class Movie {
 		priceCode = arg;
 	}
 
+	abstract public double getRentalFee(int daysRented);
+
+
 	public String getTitle() {
 		return title;
 	};
 
 	boolean isRentalNewReleaseMovie(int daysRented) {
-		return priceCode == NEW_RELEASE && daysRented > 1;
+		return false;
 	}
 }
