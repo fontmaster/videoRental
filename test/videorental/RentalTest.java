@@ -8,7 +8,7 @@ class RentalTest {
 
     @Test
     void testGetDaysRented() {
-        Movie regularMovie = new Movie ("Jurassic Park", Movie.REGULAR);
+        Movie regularMovie = new RegularMovie ("Jurassic Park");
 
         Rental rental = new Rental(regularMovie, 5);
 
@@ -18,7 +18,7 @@ class RentalTest {
 
     @Test
     void testGetMovieFromRental() {
-        Movie regularMovie = new Movie ("Jurassic Park", Movie.REGULAR);
+        Movie regularMovie = new RegularMovie ("Jurassic Park");
 
         Rental rental = new Rental(regularMovie, 5);
 

@@ -24,7 +24,7 @@ class CustomerTest {
     @Test
     void approvalTestStatement_01() {
         Customer customer = new Customer("Martin Pauler");
-        Movie movie = new Movie ("Star Wars V : The empire strikes back", Movie.NEW_RELEASE);
+        Movie movie = new NewReleaseMovie ("Star Wars V : The empire strikes back");
         Rental rental = new Rental(movie, 5);
 
         customer.addRental(rental);
@@ -35,9 +35,12 @@ class CustomerTest {
     @Test
     void approvalTestStatement_02() {
         Customer customer = new Customer("Sangjeong Jo");
-        Movie regularMovie = new Movie ("Jurassic Park", Movie.REGULAR);
-        Movie childMovie = new Movie ("Pororo : The president of children", Movie.CHILDRENS);
-        Movie newMovie = new Movie ("Orange is the new black", Movie.NEW_RELEASE);
+//        Movie regularMovie = new Movie ("Jurassic Park", Movie.REGULAR);
+//        Movie childMovie = new Movie ("Pororo : The president of children", Movie.CHILDRENS);
+//        Movie newMovie = new Movie ("Orange is the new black", Movie.NEW_RELEASE);
+        Movie regularMovie = new RegularMovie ("Jurassic Park");
+        Movie childMovie = new ChildMovie ("Pororo : The president of children");
+        Movie newMovie = new NewReleaseMovie ("Orange is the new black");
         Rental rentalForRegularMovie = new Rental(regularMovie, 5);
         Rental rentalForChildrenMovie = new Rental(childMovie, 4);
         Rental rentalForNewMovie = new Rental(newMovie, 3);
