@@ -1,7 +1,7 @@
 package videorental;
 
 class Rental {
-	private Movie movie;
+	Movie movie;
 	private int daysRented;
 
 	public Rental(Movie movie, int daysRented) {
@@ -37,5 +37,9 @@ class Rental {
 				break;
 		}
 		return rentalFee;
+	}
+
+	int getFrequentRenterPoints() {
+		return getMovie().isRentalNewReleaseMovie(getDaysRented()) ? 2 : 1;
 	}
 }

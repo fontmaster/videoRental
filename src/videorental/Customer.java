@@ -10,6 +10,7 @@ class Customer {
     public Customer(String name) {
         this.name = name;
     }
+
     public void addRental(Rental rental) {
         rentals.add(rental);
     }
@@ -33,18 +34,10 @@ class Customer {
         return result;
     }
 
-    private int getFrequentRenterPoints(Rental rental) {
-        return isRentalNewReleaseMovie(rental)? 2 : 1;
-    }
-
-    private boolean isRentalNewReleaseMovie(Rental rental) {
-        return (rental.getMovie().getPriceCode() == Movie.NEW_RELEASE) && rental.getDaysRented() > 1;
-    }
-
     private double getTotalRentalFee() {
         double totalRentalAmount = 0;
         for (Rental rental : rentals) {
-            totalRentalAmount +=  rental.getRentalFee();
+            totalRentalAmount += rental.getRentalFee();
         }
         return totalRentalAmount;
     }
@@ -52,7 +45,7 @@ class Customer {
     private int getTotalFrequentRenterPoints() {
         int frequentRenterPoints = 0;
         for (Rental rental : rentals) {
-            frequentRenterPoints += getFrequentRenterPoints(rental);
+            frequentRenterPoints += rental.getFrequentRenterPoints();
         }
         return frequentRenterPoints;
     }

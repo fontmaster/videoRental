@@ -24,4 +24,8 @@ public class Movie {
 	public String getTitle() {
 		return title;
 	};
+
+	boolean isRentalNewReleaseMovie(int daysRented) {
+		return priceCode == NEW_RELEASE && daysRented > 1;
+	}
 }
