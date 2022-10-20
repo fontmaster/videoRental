@@ -25,9 +25,15 @@ class Customer {
 
         for (Rental rental : rentals) {
             double currentRentalFee = rental.getRentalFee();
-            frequentRenterPoints += getFrequentRenterPoints(rental);
             result.append(getRentalResult(rental, currentRentalFee));
-            totalRentalAmount += currentRentalFee;
+        }
+
+        for (Rental rental : rentals) {
+            frequentRenterPoints += getFrequentRenterPoints(rental);
+        }
+
+        for (Rental rental : rentals) {
+            totalRentalAmount +=  rental.getRentalFee();
         }
 
         result.append("Amount owed is ").append(totalRentalAmount).append("\n");
